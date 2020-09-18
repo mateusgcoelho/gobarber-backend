@@ -3,7 +3,7 @@ import { getRepository, Repository } from 'typeorm';
 import IAppointmentRepostory from '@modules/appointments/repositories/IAppointmentsRepository';
 import ICreateAppointmentDTO from '@modules/appointments/dtos/ICreateAppointmentDTO';
 
-import Appointment from '@modules/appointments/infra/typeorm/entities/Appointment';
+import Appointment from '../entities/Appointment';
 
 // SOLID - L = Liskov Substitution Principle
 
@@ -14,13 +14,13 @@ class AppointmentsRepository implements IAppointmentRepostory {
     this.ormRepository = getRepository(Appointment);
   }
 
-    public async findByDate(date: Date): Promise<Appointment | undefined> {
-      const findAppointment = await this.ormRepository.findOne({
-        where: { date },
-      });
+  public async findByDate(date: Date): Promise<Appointment | undefined> {
+    const findAppointment = await this.ormRepository.findOne({
+      where: { date },
+    });
 
-      return findAppointment;
-    }
+    return findAppointment;
+  }
 
   public async create({ provider_id, date }: ICreateAppointmentDTO): Promise<Appointment> {
     const appointment = this.ormRepository.create({

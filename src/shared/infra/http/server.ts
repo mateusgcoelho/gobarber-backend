@@ -9,6 +9,7 @@ import AppError from '@shared/errors/AppErros';
 import cors from 'cors';
 
 import '@shared/infra/typeorm';
+import '@shared/container';
 
 const app = express();
 
