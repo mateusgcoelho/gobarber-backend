@@ -7,7 +7,7 @@ import User from '../../infra/typeorm/entities/User';
 
 // SOLID - L = Liskov Substitution Principle
 
-class UsersRepository implements IUsersRepostory {
+class FakeUsersRepository implements IUsersRepostory {
   private users: User[] = [];
 
   public async findById(id: string): Promise<User | undefined> {
@@ -41,4 +41,4 @@ class UsersRepository implements IUsersRepostory {
   }
 }
 
-export default UsersRepository;
+export default FakeUsersRepository;
