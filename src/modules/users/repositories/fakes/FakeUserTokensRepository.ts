@@ -4,8 +4,6 @@ import IUserTokensRepostory from '@modules/users/repositories/IUserTokensReposit
 
 import UserToken from '../../infra/typeorm/entities/UserToken';
 
-// SOLID - L = Liskov Substitution Principle
-
 class FakeUserTokensRepository implements IUserTokensRepostory {
   private userTokens: UserToken[] = [];
 
@@ -16,6 +14,8 @@ class FakeUserTokensRepository implements IUserTokensRepostory {
       id: uuid(),
       token: uuid(),
       user_id,
+      created_at: new Date(),
+      updated_at: new Date(),
     });
 
     this.userTokens.push(userToken);

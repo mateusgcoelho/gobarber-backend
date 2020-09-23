@@ -5,7 +5,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import uploadConfig from '@config/upload';
 
 import routes from './routes';
-import AppError from '@shared/errors/AppErros';
+import AppError from '@shared/errors/AppError';
 import cors from 'cors';
 
 import '@shared/infra/typeorm';
