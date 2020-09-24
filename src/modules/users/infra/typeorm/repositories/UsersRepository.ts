@@ -5,8 +5,6 @@ import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
 
 import User from '../entities/User';
 
-// SOLID - L = Liskov Substitution Principle
-
 class UsersRepository implements IUsersRepostory {
   private ormRepository: Repository<User>;
 
