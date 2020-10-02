@@ -5,10 +5,12 @@
 /.pnp
 .pnp.js
 tmp/*
+./env
 !tmp/.gitkeep
 
 # testing
 /coverage
+ormconfig.json
 
 # production
 /build

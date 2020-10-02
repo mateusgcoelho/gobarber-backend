@@ -1,6 +1,8 @@
 import 'reflect-metadata';
-import 'express-async-errors';
+import 'dotenv/config';
+
 import express, { Request, Response, NextFunction } from 'express';
+import 'express-async-errors';
 
 import uploadConfig from '@config/upload';
 
