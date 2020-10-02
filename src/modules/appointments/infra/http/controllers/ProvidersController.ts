@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { classToClass } from "class-transformer";
 
 import { container } from "tsyringe";
 
@@ -14,8 +15,6 @@ export default class ProvidersController {
       user_id,
     });
 
-    providers.forEach(provider => delete provider.password);
-
-    return response.json(providers);
+    return response.json(classToClass(providers));
   }
 }
