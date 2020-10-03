@@ -31,8 +31,6 @@ export default class ListProvidersSevice {
         except_user_id: user_id,
       });
 
-      console.log('query feita')
-
       await this.cacheProvider.save(`provider-list:${user_id}`, users);
     }
 
