@@ -6,6 +6,7 @@ import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
 
 import Appointment from '../infra/typeorm/entities/Appointment';
+import { classToClass } from 'class-transformer';
 
 interface IRequest {
   provider_id: string;
@@ -46,11 +47,9 @@ export default class ListProviderAppointmentsService {
         }
       );
 
-      console.log('buscou')
-
       await this.cacheProvider.save(
         cacheKey,
-        appointments,
+        classToClass(appointments),
       );
     }
 
